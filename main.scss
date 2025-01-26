@@ -1,0 +1,732 @@
+@use "./scss/general" as *;
+@use "./scss/settings" as *;
+.header {
+  background-image: url("./images/happy-loving-couple-bakers-drinking-coffee-looking-notebook.jpg");
+  @include bg-settings;
+  animation: change-bg 20s linear infinite;
+  .nav-bar {
+    padding-top: 30px;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      height: 90px;
+      padding: 0 30px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.433);
+      }
+      .logo {
+        @include centerr;
+        gap: 20px;
+        z-index: 1;
+        span {
+          font-size: 25px;
+          font-weight: bold;
+          color: white;
+          z-index: 1;
+        }
+        img {
+          width: 60px;
+          height: 60px;
+          z-index: 1;
+        }
+      }
+      .list {
+        @include centerr;
+        z-index: 111;
+        ul {
+          display: flex;
+          z-index: 2222;
+          gap: 30px;
+          li {
+            a {
+              color: white;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+  .header-down {
+    .container {
+      height: calc(100vh - 110px);
+      @include centerr;
+
+      flex-direction: column;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.619);
+        width: 400px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        border-radius: 25px;
+        transform: translate(-50%, -50%) rotate(-10deg);
+      }
+      .hd {
+        z-index: 11;
+        .up {
+          text-align: center;
+          color: white;
+          h6 {
+            color: $second-color;
+            font-size: 18px;
+          }
+          h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+          }
+          h4 {
+            font-size: 18px;
+            margin-bottom: 25px;
+          }
+        }
+        .down {
+          button {
+            border: 0;
+            outline: none;
+            @include btns;
+            &:first-child {
+              background-color: transparent;
+              &:hover {
+                background-color: $second-color;
+              }
+            }
+            &:last-child {
+              background-color: $second-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .header {
+    .nav-bar .container {
+      position: relative;
+      .list {
+        &:hover {
+          ul {
+            display: block;
+          }
+        }
+        ul {
+          position: absolute;
+          width: 90%;
+          top: 55%;
+          right: 50%;
+          transform: translate(50%);
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          display: none;
+          border-radius: 30px;
+          li {
+            margin-bottom: 30px;
+            text-align: center;
+            &:first-child {
+              margin-top: 20px;
+            }
+            a {
+              color: black;
+            }
+          }
+        }
+        .menu {
+          position: absolute;
+          top: 30%;
+          right: 10%;
+          transform: translate(50%);
+          span {
+            height: 4px;
+            width: 30px;
+            margin-bottom: 5px;
+            display: block;
+            background-color: white;
+          }
+        }
+      }
+    }
+    .header-down .container {
+      &::after {
+        content: "";
+        width: 100px;
+        height: 100px;
+        top: 50%;
+        left: 50%;
+        border-radius: 25px;
+        transform: translate(-50%, -50%) rotate(-10deg);
+      }
+      .hd {
+        z-index: 11;
+        .up {
+          h1 {
+            font-size: 45px;
+          }
+        }
+      }
+    }
+  }
+}
+.page2 {
+  background-color: $page2;
+  @include paddings;
+  .container {
+    @include centerr;
+    gap: 30px;
+    .left {
+      width: 50%;
+      .video {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: " ";
+          width: 100%;
+          height: 100%;
+          border-radius: 25px;
+          top: 0;
+          right: 0;
+          background-color: #dda25a69;
+        }
+        video {
+          width: 100%;
+          border-radius: 25px;
+        }
+        .text-left {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translate(-50%);
+          z-index: 11;
+          p {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .right {
+      width: 50%;
+      color: white;
+      h6 {
+        @include above-header;
+      }
+      h1 {
+        @include header-title;
+        text-align: left;
+      }
+      p {
+        margin-bottom: 20px;
+        font-size: 19px;
+      }
+      .p2 {
+        span {
+          a {
+            color: $second-color;
+          }
+        }
+      }
+      button {
+        background-color: transparent;
+        border: white 4px solid;
+        @include btns;
+        &:hover {
+          background-color: white;
+          color: $second-color;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .page2 {
+    .container {
+      flex-wrap: wrap;
+      .left {
+        width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+  }
+}
+.page3 {
+  background-color: #522c0c;
+  @include paddings;
+  .container {
+    @include centerr;
+    flex-direction: column;
+    .up {
+      color: white;
+      text-align: center;
+      h6 {
+        @include above-header;
+      }
+      h1 {
+        @include header-title;
+      }
+    }
+    .down {
+      display: flex;
+      gap: 40px;
+      .box {
+        width: 25%;
+        border-radius: 25px;
+        overflow: hidden;
+        position: relative;
+        transition: 0.5s;
+        &:hover {
+          .box-in {
+            img {
+              transition: 0.5s;
+              transform: scale(1.2);
+            }
+          }
+        }
+        &:hover {
+          &::after {
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            transform: rotate(0);
+            background-color: #ffa63a58;
+            border-radius: 25px;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -50%;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #ffa63abc;
+          transition: 0.5s;
+          transform: rotate(45deg);
+        }
+        .box-in {
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          transition: 0.5s;
+        }
+        .text {
+          position: absolute;
+          bottom: 20px;
+          left: 20%;
+          color: white;
+          transform: translate(-20%);
+          z-index: 11;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .page3 {
+    .container {
+      .down {
+        flex-wrap: wrap;
+        .box {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.page4 {
+  @include paddings;
+  @include bg-settings;
+  background-image: url("./images/happy-loving-couple-bakers-drinking-coffee-looking-notebook.jpg");
+  .container {
+    @include centerr;
+    gap: 50px;
+    .box {
+      width: 50%;
+      padding: 50px;
+      background-color: rgba(0, 0, 0, 0.677);
+      color: white;
+      border-radius: 25px;
+      .box-in {
+        .address {
+          text-align: center;
+          margin-bottom: 30px;
+        }
+        .up {
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: space-between;
+          font-weight: bold;
+
+          span {
+            &:first-child {
+              font-size: 23px;
+              font-weight: 500;
+            }
+            &:last-child {
+              color: $second-color;
+            }
+          }
+        }
+        .down {
+          margin-bottom: 20px;
+          margin-top: 10px;
+          p {
+            color: rgba(255, 255, 255, 0.583);
+          }
+        }
+      }
+
+      &:last-child .box-in:nth-child(5),
+      &:first-child .box-in:nth-child(2) {
+        .up {
+          span {
+            &:first-child {
+              position: relative;
+              &::after {
+                content: "Recommend";
+                right: 0;
+                top: 50%;
+                transform: translate(-50%);
+                background-color: #9d5519;
+                color: white;
+                padding: 3px 10px;
+                border-radius: 25px;
+                font-size: 14px;
+                margin-left: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.page5 {
+  @include paddings;
+  background-color: #552b09;
+  color: white;
+  .container {
+    @include centerr;
+    flex-direction: column;
+
+    .up-page {
+      text-align: center;
+      h1 {
+        @include header-title;
+      }
+      h5 {
+        @include above-header;
+      }
+    }
+    .down {
+      position: relative;
+      &::after {
+        content: " ";
+        position: absolute;
+        width: 6px;
+        background-color: rgb(255, 255, 255);
+        height: 95%;
+        top: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .box {
+        width: 50%;
+        margin-bottom: 30px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 20px;
+        position: relative;
+
+        .box-in {
+          background-color: rgba(0, 0, 0, 0.508);
+          border-radius: 20px;
+          overflow: hidden;
+          .up {
+            display: flex;
+            align-items: center;
+            @include bg-settings;
+            padding: 30px 10px;
+            background-image: url("./images/mid-section-waitress-wiping-espresso-machine-with-napkin-cafa-c.jpg");
+            .text {
+              font-weight: bold;
+              span {
+                display: block;
+              }
+            }
+            img {
+              margin-right: 10px;
+              width: 70px;
+              height: 65px;
+              border-radius: 100%;
+            }
+          }
+          .down-box {
+            padding: 15px;
+            background-color: #f1852d;
+            p {
+              margin-bottom: 15px;
+            }
+            hr {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+      .box1,
+      .box3 {
+        float: left;
+        width: 50%;
+        clear: both;
+        margin-left: -70px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 20px;
+          right: -29px;
+          border: 15px solid;
+          border-color: transparent transparent transparent white;
+        }
+      }
+      .box2 {
+        float: right;
+        clear: both;
+        margin-right: -60px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 20px;
+          left: -28px;
+          border: 15px solid;
+          border-color: transparent rgb(255, 255, 255) transparent transparent;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .page5 {
+    .container {
+      flex-wrap: wrap;
+      .down {
+        &::after {
+          display: none;
+        }
+
+        .box {
+          width: 100%;
+          float: none;
+          margin: 0;
+          margin-bottom: 30px;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .page4 {
+    .container {
+      flex-wrap: wrap;
+      .box {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.page6 {
+  @include paddings;
+  background-image: url("./images/happy-loving-couple-bakers-drinking-coffee-looking-notebook.jpg");
+  @include bg-settings;
+  position: relative;
+  &::after {
+    content: "";
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.27);
+  }
+  .container {
+    @include centerr;
+    flex-direction: column;
+    gap: 40px;
+    .up {
+      text-align: center;
+      z-index: 11;
+      color: white;
+      margin-bottom: 0;
+      h1 {
+        @include header-title;
+      }
+      h5 {
+        @include above-header;
+      }
+    }
+    .middle {
+      z-index: 11;
+      display: flex;
+      gap: 40px;
+      form {
+        display: flex;
+        flex-direction: column;
+        span {
+          margin-bottom: 15px;
+          color: white;
+          font-weight: bold;
+        }
+        input {
+          width: 350px;
+          padding: 15px 10px;
+          border-radius: 5px;
+          border: 2px solid $second-color;
+          &:focus {
+            outline: #f1852d;
+          }
+          &:hover {
+            background-color: $second-color;
+            transition: 0.5s;
+            &::placeholder {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .bottom {
+      z-index: 11;
+      textarea {
+        border-radius: 5px;
+        border: 2px solid $second-color;
+        width: 740px;
+        border-radius: 5px;
+        height: 100px;
+        padding: 20px 10px;
+        max-width: 100%;
+        &:hover {
+          background-color: $second-color;
+          transition: 0.5s;
+        }
+        &:focus {
+          outline: #f1852d;
+        }
+      }
+    }
+
+    a {
+      z-index: 11;
+      background-color: $second-color;
+      @include btns;
+      &:hover {
+        background-color: white;
+        color: $second-color;
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .page6 {
+    .container {
+      flex-wrap: wrap;
+      .middle {
+        display: block;
+        margin: 0;
+      }
+      .bottom {
+        width: 100%;
+      }
+      input,
+      textarea {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+.footer {
+  background-color: $second-color;
+  padding: 50px 0;
+  font-size: 18px;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    gap: 20px;
+    .part {
+      display: flex;
+      flex-direction: column;
+      margin-right: 40px;
+      h4 {
+        margin-bottom: 20px;
+      }
+      &:first-child,
+      &:nth-child(2) {
+        p {
+          margin-bottom: 20px;
+        }
+      }
+      &:nth-child(2) {
+        span {
+          color: #522c0c;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      &:last-child {
+        span {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .footer {
+    .container {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .part {
+        margin-right: 0;
+      }
+    }
+  }
+}
+@keyframes change-bg {
+  0% {
+    background-image: url("./images/happy-waitress-giving-coffee-customers-while-serving-them-coffee-shop.jpg");
+  }
+  50% {
+    background-image: url("./images/young-female-barista-wear-face-mask-serving-take-away-hot-coffee-paper-cup-consumer-cafe.jpg");
+  }
+  100% {
+    background-image: url("./images/happy-loving-couple-bakers-drinking-coffee-looking-notebook.jpg");
+  }
+}

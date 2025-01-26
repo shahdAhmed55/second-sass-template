@@ -1,0 +1,44 @@
+$second-color:  #dda15a;
+$page2 :#703c0f;
+
+
+@mixin paddings{
+    padding: 100px 0;
+}
+
+@mixin bg-settings{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+@mixin centerr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin header-title{
+    font-size: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+@mixin above-header{
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+
+@mixin btns{
+    padding: 15px 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+        transition: 0.5s;
+        cursor: pointer;
+        border-radius: 50px;
+}
